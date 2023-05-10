@@ -26,8 +26,11 @@ mkdir /opt/book-searcher/
 mkdir /opt/book-searcher/index
 ```
 #首页→文件管理器→设置→用户管理→目录范围(留空)→保存
+
 #找到文件夹 /opt/book-searcher/
+
 #打开index，上传index文件( 最好一个一个上传，有单个文件大小限制)
+
 #从本地下载对应book-searcher程序，上传到/opt/book-searcher/
 
 > [armv7架构](https://github.com/bigmouse0001/book-searcher/releases/download/0.9.1.1/book-searcher-armv7-unknown-linux-gnueabihf.tar.gz)
@@ -36,6 +39,7 @@ mkdir /opt/book-searcher/index
 #终端输入nohup ./book-searcher run，按ctrl+c，再输入sudo netstat -tulpn，查看7070端口是否被监听。
 
 #book-searcher添加开机自启，后台运行，异常关闭自启
+
 1. 打开文件管理器，找到 /etc/systemd/system/，新建文件book-searcher.service，并打开
 2. 写入以下内容，保存并关闭
 ```
@@ -54,6 +58,7 @@ Group=root
 WantedBy=multi-user.target
 
 ```
+
 3. 回到终端，输入以下代码，
 ```
 sudo systemctl daemon-reload
