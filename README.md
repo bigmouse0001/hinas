@@ -1,8 +1,9 @@
 **一、电脑浏览器输入机顶盒ip地址**
+
 账号：root
 密码：ecoo1234 (输密码不显示，输入完按确认即可)
 
-开通frp权限，kaitong-
+开通frp权限，kaitong-frp
 
 **二、安装docker**
 
