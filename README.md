@@ -5,11 +5,13 @@
 开通frp权限，kaitong-
 
 **二、安装docker**
+
 #安装docker
 `apt update && apt install docker.io`
 看终端提示，输入y，回车确认
 
 **三、安装docker面板**
+
 #安装docker面板
 `install-portainer.sh`
 #浏览器输入 http://你的路由器ip:9000
