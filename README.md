@@ -14,6 +14,7 @@
 
 #安装docker面板
 `install-portainer.sh`
+
 #浏览器输入 http://你的路由器ip:9000
 形如：192.168.1.8:9000，进入docker面板设置账号密码
 
