@@ -21,53 +21,7 @@
 
 **四、安装book-searcher**
 
-#新建程序根文件夹
-```
-mkdir /opt/book-searcher/
-mkdir /opt/book-searcher/index
-```
-#首页→文件管理器→设置→用户管理→目录范围(留空)→保存
-
-#找到文件夹 /opt/book-searcher/
-
-#打开index，上传index文件( 最好一个一个上传，有单个文件大小限制)
-
-#从本地下载对应book-searcher程序，上传到/opt/book-searcher/
-
-> [armv7架构](https://github.com/bigmouse0001/book-searcher/releases/download/0.9.1.1/book-searcher-armv7-unknown-linux-gnueabihf.tar.gz)
-> [arm64/v8架构](https://github.com/bigmouse0001/book-searcher/releases/download/0.9.1.1/book-searcher-aarch64-unknown-linux-musl.tar.gz)
-
-#终端输入nohup ./book-searcher run，按ctrl+c，再输入sudo netstat -tulpn，查看7070端口是否被监听。
-
-#book-searcher添加开机自启，后台运行，异常关闭自启
-
-1. 打开文件管理器，找到 /etc/systemd/system/，新建文件book-searcher.service，并打开
-2. 写入以下内容，保存并关闭
-```
-[Unit]
-Description=Book Searcher Service
-After=network.target
-
-[Service]
-Type=simple
-ExecStart=/opt/book-searcher/book-searcher
-Restart=always
-User=root
-Group=root
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-3. 回到终端，输入以下代码，
-```
-sudo systemctl daemon-reload
-sudo systemctl start book-searcher
-sudo systemctl enable book-searcher
-```
-4. 重启机器，终端输入`sudo netstat -tulpn`，查看7070端口是否被监听，如监听，则成功。但需要内网穿透才可正常访问。
-
+`docker run -d --restart=always -p 7070:7070 ghcr.io/little-boypp/book-searcher:0.9.1.2`
 
 **五、安装halo博客**
 ```
