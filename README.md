@@ -35,6 +35,9 @@ docker run \
   --halo.security.initializer.superadminusername=admin \
   --halo.security.initializer.superadminpassword=P@88w0rd
 ```
+
+账号：admin
+密码：P@88w0rd
 浏览器打开 ip+8090，内网穿透转发8090端口
 
 **六、安装onenav导航站**
